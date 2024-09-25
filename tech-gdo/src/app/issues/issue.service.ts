@@ -32,6 +32,7 @@ export class IssueService {
     const currentIssues = this.issuesSubject.getValue();
     this.issuesSubject.next([...currentIssues, issue]);
   }
+  
 }
 
  

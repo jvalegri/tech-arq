@@ -1,7 +1,15 @@
 <div>
-    <h1>Overview</h1>
+    <h1>Visão Geral</h1>
     <p>Visualização de painel do estoque</p>
     <app-storage></app-storage>
-    <p>Visualização das Issues </p>
-    <a routerLink="/issues">Ver Issues</a>
-</div>
+  
+    <h2>Issues</h2>
+    <ul>
+      <li *ngFor="let issue of issueList">
+        <strong>{{ issue.title }}</strong>: {{ issue.description }} <br/>
+        <em>Status:</em> {{ issue.status }} <br/>
+        <em>Criado em:</em> {{ issue.createdAt | date:'short' }}
+      </li>
+    </ul>
+  </div>
+  

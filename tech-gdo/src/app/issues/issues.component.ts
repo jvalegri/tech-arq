@@ -19,9 +19,9 @@ export class IssuesComponent implements OnInit{
   constructor(private issueService: IssueService, private router: Router) {}
 
   ngOnInit(): void {
-    this.issueService.issues$.subscribe((issues: Issue[])=> {
+    this.issueService.issues$.subscribe((issues: Issue[]) => {
       this.issues = issues;
-    })
+    });
   }
 
   closeIssue(issueId: number) {
@@ -48,6 +48,4 @@ export class IssuesComponent implements OnInit{
   pageOverview(){
     this.router.navigate(['/overview']);
   }
-
-
 }

@@ -7,6 +7,7 @@
     <label for="description">Descrição:</label>
     <input id="description" [(ngModel)]="newIssue.description" placeholder="Descrição da issue" />
   
+    <!-- Botão Adicionar Issue, desabilitado se título ou descrição estiverem vazios -->
     <button (click)="addNewIssue()" [disabled]="!newIssue.title || !newIssue.description">Adicionar Issue</button>
   </div>
   
@@ -16,13 +17,14 @@
       <h3>{{ issue.title }}</h3>
       <p>{{ issue.description }}</p>
       <p>Status: {{ issue.status }}</p>
-      <button (click)="closeIssue(issue.id)" [disabled]="issue.status === 'closed'">
-        Fechar Issue
-      </button>
+      
+      <!-- Fechar Issue, se o status for closed-->
+      <button (click)="closeIssue(issue.id)" [disabled]="issue.status === 'closed'">Fechar Issue</button>
     </li>
   </ul>
   
-
+  <!-- Botão para Visão Geral -->
   <div>
-    <button routerLink="/Overview">Overview</button>
+    <button (click)="pageOverview()">Visão Geral</button>
   </div>
+  

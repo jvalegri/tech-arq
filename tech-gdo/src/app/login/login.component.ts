@@ -19,8 +19,8 @@ export class LoginComponent {
 
   onLogin(){
     if (this.username === 'admin' && this.password === 'admin') {
-      // Para a página de issues
-      this.router.navigate(['/issues']);
+     
+      this.router.navigate(['/main-panel']);
     } else {
       alert('Credenciais inválidas!');
     }
