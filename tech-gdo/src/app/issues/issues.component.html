@@ -1,0 +1,28 @@
+<!-- Formulário para adicionar nova issue -->
+<div>
+    <h2>Adicionar nova Issue</h2>
+    <label for="title">Título:</label>
+    <input id="title" [(ngModel)]="newIssue.title" placeholder="Título da issue" />
+  
+    <label for="description">Descrição:</label>
+    <input id="description" [(ngModel)]="newIssue.description" placeholder="Descrição da issue" />
+  
+    <button (click)="addNewIssue()" [disabled]="!newIssue.title || !newIssue.description">Adicionar Issue</button>
+  </div>
+  
+  <!-- Lista de Issues -->
+  <ul>
+    <li *ngFor="let issue of issues">
+      <h3>{{ issue.title }}</h3>
+      <p>{{ issue.description }}</p>
+      <p>Status: {{ issue.status }}</p>
+      <button (click)="closeIssue(issue.id)" [disabled]="issue.status === 'closed'">
+        Fechar Issue
+      </button>
+    </li>
+  </ul>
+  
+
+  <div>
+    <button routerLink="/Overview">Overview</button>
+  </div>
