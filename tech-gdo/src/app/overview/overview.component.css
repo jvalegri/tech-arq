@@ -1,12 +1,38 @@
 .overview-container {
     display: flex;
     height: 100vh;
-    background-color: #002855;
+    background-color: #002a5d;
   }
   
+  .issues-section {
+    display: block;
+    margin-bottom: 10px;
+    padding: 20px;
+    color: #002a5d;
+    font-weight: bold;
+    text-align: left;
+    font-size: 14px;
+  }
+
+
+  .issues-section ul, 
+.storage-section ul {
+  list-style-type: none; /* remove the bullet point */
+  padding-left: 0; /* removes the left indentation */
+}
+
+  .storage-section {
+    display: block;
+    margin-bottom: 10px;
+    padding: 20px;
+    color: #002a5d;
+    font-weight: bold;
+    text-align: left;
+    font-size: 14px;
+  }
   .sidebar {
     width: 20%;
-    background-color: #002855;
+    background-color: #002a5d;
     padding: 15px;
     display: flex;
     flex-direction: column;
@@ -20,7 +46,7 @@
     background-color: #ffc700;
     border: none;
     border-radius: 20px;
-    color: #002855;
+    color: #002a5d;
     font-weight: bold;
     text-align: left;
     font-size: 16px;
@@ -32,7 +58,7 @@
     border-radius: 20px;
     padding: 20px;
     margin: 15px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 10px #002a5d(0, 0, 0, 0.1);
   }
   
   .logo-container {

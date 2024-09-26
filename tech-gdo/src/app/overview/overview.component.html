@@ -13,7 +13,7 @@
         <li *ngFor="let issue of issueList">
           <strong>Título:</strong> {{ issue.title }} <br>
           <strong>Status:</strong> {{ issue.status }} <br>
-          <strong>Criado em:</strong> {{ issue.createdAt | date:'short' }}
+          <strong>Criado em:</strong> {{ issue.createdAt | date: 'short' }}
           <hr>
         </li>
       </ul>
@@ -23,19 +23,18 @@
     <div class="storage-section">
       <h2>Estoque</h2>
       <ul>
-        <li *ngFor="let storageItem of storageList">
-          <strong>Item:</strong> {{ storageItem.title }} <br>
-          <strong>Responsável:</strong> {{ storageItem.assignee }}
-          <hr>
+        <!-- Percorre os nomes de estoque e exibe o nome e a contagem -->
+        <li *ngFor="let name of getStorageNames()">
+          <strong>{{ name }}</strong>: {{ storageCount[name] }} un <br>
         </li>
       </ul>
     </div>
   </div>
 
-  <!-- logotipo  -->
+  <!-- logotipo -->
   <div class="logo-container">
     <a [routerLink]="['/main-panel']">
-    <img src="assets/file.png" alt="Logo ARQ" />
+      <img src="assets/file.png" alt="Logo ARQ" />
     </a>
   </div>
 </div>
