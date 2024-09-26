@@ -1,15 +1,41 @@
-<div>
-    <h1>Visão Geral</h1>
-    <p>Visualização de painel do estoque</p>
-    <app-storage></app-storage>
-  
-    <h2>Issues</h2>
-    <ul>
-      <li *ngFor="let issue of issueList">
-        <strong>{{ issue.title }}</strong>: {{ issue.description }} <br/>
-        <em>Status:</em> {{ issue.status }} <br/>
-        <em>Criado em:</em> {{ issue.createdAt | date:'short' }}
-      </li>
-    </ul>
+<div class="overview-container">
+  <!-- Sidebar com Visão Geral -->
+  <div class="sidebar">
+    <div class="sidebar-button">Visão Geral</div>
   </div>
-  
+
+  <!-- Conteúdo principal -->
+  <div class="content">
+    <!-- Seção de Issues -->
+    <div class="issues-section">
+      <h2>Issues</h2>
+      <ul>
+        <li *ngFor="let issue of issueList">
+          <strong>Título:</strong> {{ issue.title }} <br>
+          <strong>Status:</strong> {{ issue.status }} <br>
+          <strong>Criado em:</strong> {{ issue.createdAt | date:'short' }}
+          <hr>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Seção de Estoque -->
+    <div class="storage-section">
+      <h2>Estoque</h2>
+      <ul>
+        <li *ngFor="let storageItem of storageList">
+          <strong>Item:</strong> {{ storageItem.title }} <br>
+          <strong>Responsável:</strong> {{ storageItem.assignee }}
+          <hr>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- logotipo  -->
+  <div class="logo-container">
+    <a [routerLink]="['/main-panel']">
+    <img src="assets/file.png" alt="Logo ARQ" />
+    </a>
+  </div>
+</div>

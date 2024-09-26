@@ -1,13 +1,28 @@
-<form (ngSubmit)="onLogin()" #loginForm="ngForm">
-  <div class="labelUser">
-    <label for="username">Usuário:</label>
-    <input type="text" id="username" name="username" [(ngModel)]="username" required />
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página de login</title>
+  <link rel="stylesheet" href="login.component.css">
+</head>
+<body style="margin: 0;">
+  <div class="container">
+    <img [src]="'assets/file.png'" alt="Logo ARQ" class="logo">
+    <form (ngSubmit)="onLogin()" #loginForm="ngForm" class="login-form">
+      <div class="input-group">
+        <input type="text" id="username" name="username" placeholder="Usuário" [(ngModel)]="username" required />
+      </div>
+      <div class="input-group">
+        <input type="password" id="password" name="password" placeholder="Senha" [(ngModel)]="password" required />
+      </div>
+      <div class="button-container">
+        <button type="submit" [disabled]="!loginForm.form.valid">
+          <span>&gt;</span>
+        </button>
+      </div>
+    </form>
   </div>
-  <div class="labelPass">
-    <label for="password">Senha:</label>
-    <input type="password" id="password" name="password" [(ngModel)]="password" required />
-  </div>
-  <div class="buttonLog">
-    <button type="submit" [disabled]="!loginForm.form.valid">Login</button>
-  </div>
-</form>
+</body>
+</html>

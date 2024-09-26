@@ -12,8 +12,8 @@ import { FormsModule } from '@angular/forms';
 })
 export class LoginComponent {
     
-  username: string = 'jv';
-  password: string = 'jv';
+  username: string = 'Usuário';
+  password: string = 'Senha';
 
   constructor(private router: Router) { }
 
