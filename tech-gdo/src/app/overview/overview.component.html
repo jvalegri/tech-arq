@@ -9,7 +9,7 @@
     <!-- Seção de Issues -->
     <div class="issues-section">
       <div class="issue-header">
-        <h2>Issues</h2>
+          <h2>Issues</h2>
       </div>
       <ul>
         <li *ngFor="let issue of issueList">
@@ -23,7 +23,9 @@
 
     <!-- Seção de Estoque -->
     <div class="storage-section">
-      <h2>Estoque</h2>
+      <div class="storage-header">
+        <h2>Estoque</h2>
+      </div>
       <ul>
         <!-- Percorre os nomes de estoque e exibe o nome e a contagem -->
         <li *ngFor="let name of getStorageNames()">

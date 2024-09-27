@@ -13,7 +13,7 @@ export const routes: Routes = [
   { path: 'overview', component: OverviewComponent },
   { path: 'issues', component: IssuesComponent },
   { path: 'storage', component: StorageComponent},
-  { path: '', redirectTo: 'overview', pathMatch: 'full' } 
+  { path: '', redirectTo: 'main-panel', pathMatch: 'full' } 
 ];
 
 @NgModule({

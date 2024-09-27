@@ -31,6 +31,21 @@
     text-align: left;
     font-size: 14px;
   }
+
+  .storage-header{
+    flex: 1;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 10px;
+    padding-right: 5px;
+    max-width: 70px;
+    background-color: #002a5d;
+    margin-bottom: 10px;
+    background-color: #ffc700;
+    border-radius: 50px;
+    color: #002a5d;
+    font-size: 12px;
+  }
   .sidebar {
     flex: 1;
     max-width: 300px;
@@ -45,17 +60,35 @@
     display: block;
     margin-bottom: 10px;
     padding: 15px;
+    padding-bottom: 30px;
+    padding-top: 30px;
     background-color: #ffc700;
     border: none;
     border-radius: 20px;
     color: #002a5d;
     font-weight: bold;
-    text-align: left;
-    font-size: 16px;
+    text-align: center;
+    font-size: 26px;
   }
 
-  
-  
+  .issue-header {
+    flex: 1;
+    max-width: 50px;
+    padding-left: 9px;
+    padding-top: 0px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    border-top-width: 7px;
+    background-color: #002a5d;
+    margin-bottom: 10px;
+    height: 20px;
+    padding-bottom: 0px; /* Reduzindo o padding inferior */
+    background-color: #ffc700;
+    border-radius: 50px;
+    color: #002a5d;
+    font-size: 12px;
+}
+
   .content {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     flex: 3; 
