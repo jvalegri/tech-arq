@@ -1,5 +1,5 @@
 <!-- Formulário para adicionar nova issue -->
-<div>
+<div class="issueForm">
     <h2>Adicionar nova Issue</h2>
     <label for="title">Título:</label>
     <input id="title" [(ngModel)]="newIssue.title" placeholder="Título da issue" />
@@ -12,6 +12,8 @@
   </div>
   
   <!-- Lista de Issues -->
+
+
   <ul>
     <li *ngFor="let issue of issues">
       <h3>{{ issue.title }}</h3>
