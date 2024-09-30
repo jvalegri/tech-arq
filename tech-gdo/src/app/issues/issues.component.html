@@ -1,46 +1,61 @@
-<!--Sessão geral de Issues-->
-<div class="issues-section">
-    <!--Sidebar-->
-    <div class="sidebar">
-      <div class="sidebar-button">
-        <h1>Issues</h1>
-      </div>
+<div class="issue-home">
+
+  <div class="sidebar">
+    <!-- Sidebar for creating new issues -->
+    <div class="sidebar-text-box">
+      <!-- Campo de entrada para o ID da issue (somente leitura) -->
+      <label for="issue-id">ID:</label>
+      <input id="issue-id" type="text" [value]="newIssue.id" readonly />
+      <!-- Campo de entrada para o título da issue -->
+      <label for="issue-title">Título:</label>
+      <input id="issue-title" type="text" [(ngModel)]="newIssue.title" />
+      <!-- Campo de entrada para a descrição da issue -->
+      <label for="issue-description">Descrição:</label>
+      <textarea id="issue-description" [(ngModel)]="newIssue.description"></textarea>
+      <!-- Botão para adicionar a nova issue -->
+      <button (click)="addNewIssue()">Adicionar Issue</button>
     </div>
 
-
-
-
-
-
-<!-- Formulário para adicionar nova issue -->
-<div class="issueForm">
-    <h2>Adicionar nova Issue</h2>
-    <label for="title">Título:</label>
-    <input id="title" [(ngModel)]="newIssue.title" placeholder="Título da issue" />
-  
-    <label for="description">Descrição:</label>
-    <input id="description" [(ngModel)]="newIssue.description" placeholder="Descrição da issue" />
-  
-    <!-- Botão Adicionar Issue, desabilitado se título ou descrição estiverem vazios -->
-    <button (click)="addNewIssue()" [disabled]="!newIssue.title || !newIssue.description">Adicionar Issue</button>
+    <!-- Logo section -->
+    <div class="logo-container">
+      <a [routerLink]="['/main-panel']">
+        <img src="assets/file.png" alt="Logo ARQ" />
+      </a>
+    </div>
   </div>
-  
-  <!-- Lista de Issues -->
 
+  <!-- Issues container -->
+  <div class="issue-container">
+    <!-- Issues header section -->
+    <div class="issue-container-header">
+      <!-- Button to toggle between open and closed issues -->
+      <button (click)="toggleStatus()">
+        {{ currentStatus === 'open' ? 'Abertas' : 'Fechadas' }}
+      </button>
+    </div>
 
-  <ul>
-    <li *ngFor="let issue of issues">
-      <h3>{{ issue.title }}</h3>
-      <p>{{ issue.description }}</p>
-      <p>Status: {{ issue.status }}</p>
-      
-      <!-- Fechar Issue, se o status for closed-->
-      <button (click)="closeIssue(issue.id)" [disabled]="issue.status === 'closed'">Fechar Issue</button>
-    </li>
-  </ul>
-  
-  <!-- Botão para Visão Geral -->
-  <div>
-    <button (click)="pageOverview()">Visão Geral</button>
+    <!-- Sub-header for issue details -->
+    <div class="issue-sub-header">
+      <h4>ID</h4>
+      <h4>Título</h4>
+      <h4>Descrição</h4>
+      <h4>Criada em</h4>
+      <h4>Criada por</h4>
+    </div>
+
+    <!-- Issues list section -->
+    <div class="issues-list">
+      <!-- Loop para exibir issues filtradas -->
+      <div *ngFor="let issue of filteredIssues" class="issue-item">
+        <span>{{ issue.id }}</span>
+        <span>{{ issue.title }}</span>
+        <span>{{ issue.description }}</span>
+        <span>{{ issue.createdAt }}</span>
+        <span>{{ issue.assignee}}</span>
+        <!-- Botões para fechar ou reabrir a issue -->
+        <button *ngIf="issue.status === 'open'" (click)="closeIssue(issue.id)">Fechar Issue</button>
+        <button *ngIf="issue.status === 'closed'" (click)="reopenIssue(issue.id)">Reabrir Issue</button>
+      </div>
+    </div>
   </div>
-  
+</div>
