@@ -1,5 +1,8 @@
 {
   "dependencies": {
+    "@capacitor/cli": "^6.1.2",
+    "@capacitor/core": "^6.1.2",
+    "@capacitor/ios": "^6.1.2",
     "cors": "^2.8.5",
     "express": "^4.21.0"
   },
